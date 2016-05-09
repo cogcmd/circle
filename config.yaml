@@ -1,0 +1,22 @@
+---
+cog_bundle_version: 2
+name: circle
+version: "0.1"
+commands:
+  list:
+    executable: "/usr/bin/something.rb"
+    documentation: "circle"
+    enforcing: false
+    options:
+      short:
+        type: bool
+        required: false
+      type:
+        type: string
+        required: false
+      server:
+        type: string
+        required: false
+templates:
+  list:
+    slack: "```{{#body}}{{{.}}}\n{{/body}}```"
