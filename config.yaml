@@ -4,7 +4,7 @@ name: circle
 version: "0.1"
 commands:
   list:
-    executable: "/usr/bin/something.rb"
+    executable: "/usr/bin/list.rb"
     documentation: "circle"
     enforcing: false
     options:
