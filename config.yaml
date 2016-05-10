@@ -4,16 +4,16 @@ name: circle
 version: "0.1"
 docker:
   image: "drapergeek/circle"
-  tag: "latest"
+  tag: "0.1"
 commands:
   list:
-    executable: "/usr/circle/bin/list.rb"
+    executable: "/bundle/bin/list.rb"
     documentation: "circle list <project>"
   build:
-    executable: "/usr/circle/bin/build.rb"
+    executable: "/bundle/bin/build.rb"
     documentation: "circle build <project> <branch>"
   status:
-    executable: "/usr/circle/bin/status.rb"
+    executable: "/bundle/bin/status.rb"
     documentation: "circle status <project> <branch>"
 templates:
   list:
