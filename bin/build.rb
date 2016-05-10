@@ -2,9 +2,10 @@
 require "net/http"
 require "json"
 require_relative "../lib/circle_url"
+require_relative "../lib/cog_helpers"
 
-project = ARGV[0]
-branch = ARGV[1]
+project = ENV["COG_ARGV_0"]
+branch = ENV["COG_ARGV_1"]
 
 if project && branch
   url = CircleUrl.new(project).build_branch(branch)
