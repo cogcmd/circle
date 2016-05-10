@@ -15,3 +15,5 @@ commands:
 templates:
   list:
     slack: "{{#.}}{{build_num}} - {{branch}} - {{status}} - {{author_name}}{{/.}}"
+  status:
+    slack: "{{status}} - {{stop_time}}"

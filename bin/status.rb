@@ -2,9 +2,10 @@
 require "net/http"
 require "json"
 require_relative "../lib/circle_url"
+require_relative "../lib/cog_helpers"
 
-project = ARGV[0]
-branch = ARGV[1]
+project = ENV["COG_ARGV_0"]
+branch = ENV["COG_ARGV_1"]
 
 if project && branch
   url = CircleUrl.new(project, 100).list
@@ -12,8 +13,7 @@ if project && branch
   build = all_builds.find do |json|
     json["branch"] == branch
   end
-
-  puts "#{branch} - #{build["status"]} - #{build["stop_time"]}"
+  CogHelpers.output_json_with_template(JSON.generate(build), "status")
 else
   puts "You must provide a project name and branch name"
 end
