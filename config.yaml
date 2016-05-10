@@ -5,16 +5,25 @@ version: "0.1"
 docker:
   image: "drapergeek/circle"
   tag: "0.1"
+permissions:
+  - circle:read
+  - circle:build
 commands:
   list:
     executable: "/bundle/bin/list.rb"
     documentation: "circle list <project>"
+    rules:
+      - when command is circle:list must have circle:read
   build:
     executable: "/bundle/bin/build.rb"
     documentation: "circle build <project> <branch>"
+    rules:
+      - when command is circle:build must have circle:build
   status:
     executable: "/bundle/bin/status.rb"
     documentation: "circle status <project> <branch>"
+    rules:
+      - when command is circle:status must have circle:read
 templates:
   list:
     slack: "{{#.}}{{build_num}} - {{branch}} - {{status}} - {{author_name}}{{/.}}"
