@@ -2,6 +2,9 @@
 cog_bundle_version: 2
 name: circle
 version: "0.1"
+docker:
+  image: "drapergeek/circle"
+  tag: "latest"
 commands:
   list:
     executable: "/usr/circle/bin/list.rb"
