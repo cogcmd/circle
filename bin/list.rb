@@ -2,13 +2,13 @@
 require "net/http"
 require "json"
 require_relative "../lib/circle_url"
+require_relative "../lib/cog_helpers"
+project = ENV["COG_ARGV_0"]
 
-if ARGV[0]
-  url = CircleUrl.new(ARGV[0]).list
-  builds = JSON.parse(Net::HTTP.get(url))
-  builds.each do |build|
-    puts "#{build["build_num"]} #{build["branch"]}/#{build["committer_name"]} #{build["status"]}"
-  end
+if project
+  url = CircleUrl.new(project).list
+  json = Net::HTTP.get(url)
+  CogHelpers.output_json_with_template(json, "list")
 else
   puts "You must provide a project name"
 end

@@ -4,35 +4,14 @@ name: circle
 version: "0.1"
 commands:
   list:
-    executable: "/usr/bin/list.rb"
+    executable: "/usr/circle/bin/list.rb"
     documentation: "circle list <project>"
-    enforcing: false
-    options:
-      project:
-        type: string
-        required: true
   build:
-    executable: "/usr/bin/build.rb"
+    executable: "/usr/circle/bin/build.rb"
     documentation: "circle build <project> <branch>"
-    enforcing: false
-    options:
-      project:
-        type: string
-        required: true
-      branch:
-        type: string
-        required: true
   status:
-    executable: "/usr/bin/status.rb"
+    executable: "/usr/circle/bin/status.rb"
     documentation: "circle status <project> <branch>"
-    enforcing: false
-    options:
-      project:
-        type: string
-        required: true
-      branch:
-        type: string
-        required: true
 templates:
   list:
-    slack: "```{{#body}}{{{.}}}\n{{/body}}```"
+    slack: "{{#.}}{{build_num}} - {{branch}} - {{status}} - {{author_name}}{{/.}}"
