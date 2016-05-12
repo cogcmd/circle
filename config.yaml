@@ -11,17 +11,17 @@ permissions:
 commands:
   list:
     executable: "/bundle/bin/list.rb"
-    documentation: "circle list <project>"
+    documentation: "`circle list <project>`"
     rules:
       - when command is circle:list must have circle:read
   build:
     executable: "/bundle/bin/build.rb"
-    documentation: "circle build <project> <branch>"
+    documentation: "`circle build <project> <branch>`"
     rules:
       - when command is circle:build must have circle:build
   status:
     executable: "/bundle/bin/status.rb"
-    documentation: "circle status <project> <branch>"
+    documentation: "`circle status <project> <branch>`"
     rules:
       - when command is circle:status must have circle:read
 templates:
