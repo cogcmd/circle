@@ -2,10 +2,10 @@
 cog_bundle_version: 3
 name: circle
 description: "Interact with Circle CI"
-version: "0.1"
+version: "0.2"
 docker:
-  image: "drapergeek/circle"
-  tag: "0.1"
+  image: "cogcmd/circle"
+  tag: "0.2"
 permissions:
   - circle:read
   - circle:build
