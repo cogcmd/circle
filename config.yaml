@@ -1,6 +1,7 @@
 ---
-cog_bundle_version: 2
+cog_bundle_version: 3
 name: circle
+description: "Interact with Circle CI"
 version: "0.1"
 docker:
   image: "drapergeek/circle"
@@ -11,16 +12,19 @@ permissions:
 commands:
   list:
     executable: "/bundle/bin/list.rb"
+    description: "List recent builds and statuses for a project"
     documentation: "`circle list <project>`"
     rules:
       - when command is circle:list must have circle:read
   build:
     executable: "/bundle/bin/build.rb"
+    description: "Rebuild a given branch of a project"
     documentation: "`circle build <project> <branch>`"
     rules:
       - when command is circle:build must have circle:build
   status:
     executable: "/bundle/bin/status.rb"
+    description: "Show the most recent build of a branch"
     documentation: "`circle status <project> <branch>`"
     rules:
       - when command is circle:status must have circle:read
