@@ -13,5 +13,5 @@ circle:build <project> <branch> - Rebuild the given branch
 All configuration variables are required.
 ```
 CIRCLE_ORGANIZATION=<YOUR ORGANIZATION NAME>
-CIRCLE_APIK_TOKEN=<YOUR CIRCLE API TOKEN>
+CIRCLE_API_TOKEN=<YOUR CIRCLE API TOKEN>
 ```
