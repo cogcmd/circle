@@ -1,17 +1,5 @@
 # Circle CI Bundle for Cog
 
-## Commands
+**END OF LIFE NOTICE**
 
-```
-circle:list <project> - Show a list of recent builds and their statuses
-circle:status <project> <branch> - Show the most recent build of a branch
-circle:build <project> <branch> - Rebuild the given branch
-```
-
-## Configuration
-
-All configuration variables are required.
-```
-CIRCLE_ORGANIZATION=<YOUR ORGANIZATION NAME>
-CIRCLE_API_TOKEN=<YOUR CIRCLE API TOKEN>
-```
+Operable no longer uses the CircleCI service, and thus we are not in a position to continue developing and supporting this bundle. No further work will be done in this repository.
